@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+</style>
+	
   <script>
 
-    function checkBrowser() { 
+	  function simulate(element, eventName)
+{
+    var options = extend(defaultOptions, arguments[2] || {});
+    var oEvent, eventType = null;
+
+    for (var name in eventMatchers)
+    {
+        if (eventMatchers[name].test(eventName)) { eventType = name; break; }
+    }
+
+    if (!eventType)
+        throw new SyntaxError('Only HTMLEvents and MouseEvents interfaces are supported');
+
+    if (document.createEvent)
+    {
+        oEvent = document.createEvent(eventType);
+        if (eventType == 'HTMLEvents')
+        {
+            oEvent.initEvent(eventName, options.bubbles, options.cancelable);
+        }
+        else
+        {
+            oEvent.initMouseEvent(eventName, options.bubbles, options.cancelable, document.defaultView,
+            options.button, options.pointerX, options.pointerY, options.pointerX, options.pointerY,
+            options.ctrlKey, options.altKey, options.shiftKey, options.metaKey, options.button, element);
+        }
+        element.dispatchEvent(oEvent);
+    }
+    else
+    {
+        options.clientX = options.pointerX;
+        options.clientY = options.pointerY;
+        var evt = document.createEventObject();
+        oEvent = extend(evt, options);
+        element.fireEvent('on' + eventName, oEvent);
+    }
+    return element;
+}
+
+function extend(destination, source) {
+    for (var property in source)
+      destination[property] = source[property];
+    return destination;
+}
+
+var eventMatchers = {
+    'HTMLEvents': /^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,
+    'MouseEvents': /^(?:click|dblclick|mouse(?:down|up|over|move|out))$/
+}
+var defaultOptions = {
+    pointerX: 0,
+    pointerY: 0,
+    button: 0,
+    ctrlKey: false,
+    altKey: false,
+    shiftKey: false,
+    metaKey: false,
+    bubbles: true,
+    cancelable: true
+}
+
+    function checkBrowser() 
+	{ 
      if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
     {
         alert('Opera - Not Supported');
     }
     else if(navigator.userAgent.indexOf("Chrome") != -1 )
-    {       
-		window.location.href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;";
+    {     
+	    simulate(document.getElementById("ar-andr"), "click"); 
     }
     else if(navigator.userAgent.indexOf("Safari") != -1)
     {
-         window.location.href="https://debkumar8k.github.io/WebAR/assets/model/page1.usdz";
+        simulate(document.getElementById("ar-iosr"), "click"); 
     }
     else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
     {
@@ -33,8 +109,10 @@
     </script>
   
 </head>
-<body>
-  
-  
+
+<body onload="checkBrowser()">  
+<a id="ar-andr" class="button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">AR Demo Android</a>
+ 
+ <a id="ar-iosr" class="button" href="https://debkumar8k.github.io/WebAR/assets/model/page1.usdz" rel="ar">AR Demo iOS</a>
 </body>
 </html>
