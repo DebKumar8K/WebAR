@@ -87,11 +87,11 @@ var defaultOptions = {
     }
     else if(navigator.userAgent.indexOf("Chrome") != -1 )
     {     
-	    simulate(document.getElementById("ar-close"), "click"); 
+	    simulate(document.getElementById("ar-andr"), "click"); 
     }
     else if(navigator.userAgent.indexOf("Safari") != -1)
     {
-        window.location.href="https://debkumar8k.github.io/WebAR/assets/model/page1.usdz";
+        simulate(document.getElementById("ar-iosr"), "click"); 
     }
     else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
     {
@@ -111,7 +111,8 @@ var defaultOptions = {
 </head>
 
 <body onload="checkBrowser()">  
-<a id="ar-close" class="button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">AR Demo Android</a>
+<a id="ar-andr" class="button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">AR Demo Android</a>
  
+ <a id="ar-iosr" class="button" href="https://debkumar8k.github.io/WebAR/assets/model/page1.usdz" rel="ar">AR Demo iOS</a>
 </body>
 </html>
