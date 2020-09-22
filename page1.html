@@ -87,21 +87,7 @@ var defaultOptions = {
     }
     else if(navigator.userAgent.indexOf("Chrome") != -1 )
     {     
-	    simulate(document.getElementById("ar-close"), "click");
-	    
-	     <!-- var evt = document.createEvent("MouseEvents"); -->
-  <!-- evt.initMouseEvent("click", true, true, window, -->
-    <!-- 0, 8, 8, 0, 0, false, false, false, false, 0, null); -->
-  <!-- var a = document.getElementById("ar-close");  -->
-  <!-- a.dispatchEvent(evt);  -->	    
-	    
-		<!-- Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW); -->
-		<!-- Uri intentUri =Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon().appendQueryParameter("file", "https://debkumar8k.github.io/WebAR/assets/model/page1.glb").appendQueryParameter("mode", "ar_only").build(); -->
-		<!-- sceneViewerIntent.setData(intentUri); -->
-		<!-- sceneViewerIntent.setPackage("com.google.ar.core"); -->
-		<!-- startActivity(sceneViewerIntent); -->
-		
-		// alert('111 - Not Supported');
+	    simulate(document.getElementById("ar-close"), "click"); 
     }
     else if(navigator.userAgent.indexOf("Safari") != -1)
     {
@@ -125,8 +111,7 @@ var defaultOptions = {
 </head>
 
 <body onload="checkBrowser()">  
-<a id="ar-close" class="button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;"><img src="assets/images/logo.png" alt="" title="">AR Demo Android</a>
- <!--  <a id="ar-close" class="button" href="www.google.com">AR Demo Android</a> -->
+<a id="ar-close" class="button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">AR Demo Android</a>
  
 </body>
 </html>
