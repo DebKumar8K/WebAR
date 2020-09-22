@@ -11,11 +11,23 @@
     }
     else if(navigator.userAgent.indexOf("Chrome") != -1 )
     {     
-	     var evt = document.createEvent("MouseEvents");
-  evt.initMouseEvent("click", true, true, window,
-    0, 0, 0, 0, 0, false, false, false, false, 0, null);
-  var a = document.getElementById("ar-page"); 
-  a.dispatchEvent(evt);      
+	     //var evt = document.createEvent("MouseEvents");
+  //evt.initMouseEvent("click", true, true, window,
+   // 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+  //var a = document.getElementById("ar-page"); 
+ // a.dispatchEvent(evt);      
+	    
+	    Intent sceneViewerIntent = new Intent(Intent.ACTION_VIEW);
+Uri intentUri =
+    Uri.parse("https://arvr.google.com/scene-viewer/1.0").buildUpon()
+    .appendQueryParameter("file", "https://debkumar8k.github.io/WebAR/assets/model/page1.glb")
+    .appendQueryParameter("mode", "ar_only")
+    .build();
+sceneViewerIntent.setData(intentUri);
+sceneViewerIntent.setPackage("com.google.ar.core");
+startActivity(sceneViewerIntent);
+	    
+	    
 	   // document.getElementById('ar-page').click();
 	   // window.location.href="https://debkumar8k.github.io/WebAR/index.html";
 		//window.location.href="intent://arvr.google.com/scene-viewer/1.0?file=https://debkumar8k.github.io/WebAR/assets/model/page1.glb&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;";
