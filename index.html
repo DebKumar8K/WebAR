@@ -1,54 +1,56 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
- 
-  <meta charset="UTF-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
-  <meta name="description" content="An overview of AR/VR technology and applications in Healthcare">
-  
-  
-  <title>Home</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#1474a4" />
+    <meta name="msapplication-navbutton-color" content="#1474a4" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#1474a4" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+	
+	<script type="text/javascript">
+	function validate()
+{
+    if(   document.getElementById("uname").value == "debkumar"
+       && document.getElementById("pwd").value == "password" )
+    {
+        //alert( "validation succeeded" );
+        //location.href="product.html";
+		load("product.html");
+    }
+    else
+    {
+        alert( "validation failed" );
+        location.href="index.html";
+    }
+}
+</script> 
+
+
 </head>
 <body>
-  <section class="header5 cid-sbjailTCT3 mbr-fullscreen" id="header5-0">
-
-    
-
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">AR Demo</h1>
-                <p class="mbr-text align-center display-5 pb-3 mbr-fonts-style">
-                   An overview of AR/VR technology and applications in Healthcare
-                </p>
-                
-            </div>
+    <div class="top-header-sec">
+        <div class="page-container-sec">
+            <div class="logo-sec"><img src="images/logo.png" /></div>
         </div>
     </div>
+    <div class="page-container-sec">
+        <div class="login-sec">
+            <div class="card-heading">Login</div>
+            <form>
+                <input type="text" id= "uname" placeholder="Email address" />
+                <input type="password" id="pwd" placeholder="Current Password" />
+                <input type="submit" value="Log in" onclick="validate()" />
+            </form>
 
-    
-</section>
 
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  
-  
+        </div>
+    </div>
+    <div class="footer-sec">
+        <img src="images/footer-logo.png" />
+    </div>
+    <!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script> -->
 </body>
 </html>
