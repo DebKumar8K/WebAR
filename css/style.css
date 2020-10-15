@@ -103,8 +103,8 @@ body {
 }
 .product-view-page-container .products-frame {
     float: left;
-    width: calc(55% - 6px);
-    min-height: 450px;
+    width: calc(70% - 6px);
+    min-height: 600px;
     margin: 3px;
     box-shadow: 0px 0px 5px rgba(0,0,0,.2);
 }
