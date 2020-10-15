@@ -17,12 +17,13 @@
        && document.getElementById("pwd").value == "password" )
     {
         //alert( "validation succeeded" );
-        window.location.href="product.html";
+        document.location.href='product.html',true;
     }
     else
     {
         alert( "validation failed" );
-        window.location.href="index.html";
+        //window.location.href="index.html";
+		return false;
     }
 	return false;
 }
