@@ -127,7 +127,7 @@ body {
     text-align: center;
 }
 .frame-asset-sec .product-img-sec .product-img-sec img {
-    max-height: 360px;
+    max-height: 340px;
     margin-bottom: 20px;
 }
 .product-view-page-container .frame-asset-sec .product-scan-sec {
@@ -139,7 +139,7 @@ body {
     text-align: center;
 }
 .frame-asset-sec .product-scan-sec .scan-sec img {
-    width: 150px;
+    width: 200px;
     margin: auto;
     max-width: 90%;
 }
