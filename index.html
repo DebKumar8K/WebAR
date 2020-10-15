@@ -17,7 +17,10 @@
        && document.getElementById("pwd").value == "password" )
     {
         //alert( "validation succeeded" );
-        document.location.href='product.html',true;
+        //document.location.href='product.html',true;
+		//url_redirect("product.html");
+		window.location.replace("product.html");
+		return true;
     }
     else
     {
@@ -27,6 +30,27 @@
     }
 	return false;
 }
+function url_redirect(url){
+    var X = setTimeout(function(){
+        window.location.replace(url);
+        return true;
+    },300);
+
+    if( window.location = url ){
+        clearTimeout(X);
+        return true;
+    } else {
+        if( window.location.href = url ){
+            clearTimeout(X);
+            return true;
+        }else{
+            clearTimeout(X);
+            window.location.replace(url);
+            return true;
+        }
+    }
+    return false;
+};
 </script> 
 
 
@@ -43,7 +67,7 @@
             <form>
                 <input type="text" id= "uname" placeholder="Email address" />
                 <input type="password" id="pwd" placeholder="Current Password" />
-                <input type="submit" value="Log in" onclick="validate()" />
+                <input type="button" value="Login" onclick="validate()" />
             </form>
 
 

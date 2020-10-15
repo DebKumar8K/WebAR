@@ -36,7 +36,7 @@ body {
     font-size: 24px;
     margin-bottom: 20px;
 }
-.login-sec input[type=text],.login-sec input[type=password],.login-sec input[type=submit] {
+.login-sec input[type=text],.login-sec input[type=password],.login-sec input[type=button] {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
@@ -45,7 +45,7 @@ body {
     font-size: 16px;
     margin: 5px 0px;
 }
-.login-sec input[type=submit] {
+.login-sec input[type=button] {
     background-color: #1474a4;
     padding: 10px;
     box-sizing: border-box;
